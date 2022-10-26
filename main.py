@@ -1,3 +1,4 @@
+from cmath import sqrt
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -14,13 +15,11 @@ st.sidebar.title("Configuration")
 st.sidebar.multiselect('Geométrie', ['Nez pointu', 'sphère'])
 
 st.sidebar.slider('Nombre de Mach', 5, 8)
-st.sidebar.slider('Température', 0, 100)
+st.sidebar.slider('Température', 0, 10000)
 st.sidebar.slider('Pression', 0, 100)
 
-chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=['a', 'b', 'c'])
 
-st.write("Reapartion de la température")
 
-st.line_chart(chart_data)
+def detente_isentropique(M0,gamma):
+    
+    
